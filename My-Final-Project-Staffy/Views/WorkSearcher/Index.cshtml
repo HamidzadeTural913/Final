@@ -1,0 +1,126 @@
+﻿@model List<AppUser>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="ish-axtaranlar">
+    <div class="search-input">
+        <div class="first-input">
+            <input type="search" placeholder="Bacariqlar">
+            <div class="etrafli">
+                <div class="etrafli-axtar">
+                    <span>Ətraflı axtarış</span>
+                    <div class="arrow-down"><i class="fa-solid fa-angle-down"></i></div>
+                </div>
+                <div class="search">
+                    <a href="" class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="catacory">
+            <form action="">
+                <div class="bacariqlar">
+                    <label for="" class="skils">
+                        Bacariqlar
+                    </label>
+                    <input type="text">
+                </div>
+                <div class="selects">
+                    <div class="bolge">
+                        <label for="" class="skils">
+                            Bölgə
+                        </label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="efe">Bakı</option>
+                            <option value="efe">Gəncə</option>
+                            <option value="efe">Sumqayıt</option>
+                            <option value="efe">Zərdab</option>
+
+                        </select>
+                    </div>
+                    <div class="cinsiyyet">
+                        <label for="" class="skils">
+                            Cinsiyyət
+                        </label>
+                        <select name="" id="" class="form-control">
+                            <option value=""></option>
+                            <option value="efe">Kişi</option>
+                            <option value="efe">Qadın</option>
+                        </select>
+                    </div>
+                    <div class="katakoriya" class="form-control">
+                        <label for="" class="skils">
+                            Kateqoriya
+                        </label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="efe">İnzibati</option>
+                            <option value="efe">Maliyyə</option>
+                            <option value="efe">Satış</option>
+                            <option value="efe">İnformasiya texnologiyaları</option>
+                            <option value="efe">Marketinq</option>
+                            <option value="efe">Tibb və Əczaçılıq</option>
+                            <option value="efe">Nəqliyyat</option>
+                            <option value="efe">İncəsənət</option>
+                        </select>
+                    </div>
+                    <div class="status">
+                        <label for="" class="skils">
+                            Status
+                        </label>
+                        <select name="" id="" class="form-control">
+                            <option value=""></option>
+                            <option value="efe">Məşğul</option>
+                            <option value="efe">Yeni iş imkanlarına açıq</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="slider-div">
+        <p>
+            <label for="amount">Əmək haqqı:</label>
+            <input type="text" id="amount" readonly style="border:0; color:black; font-weight:bold;">
+        </p>
+
+        <div id="slider-range"></div>
+    </div>
+    <div class="filter-toogle">
+        <div class="filter">
+            <div class="filter-clean">
+                <i class="fa-solid fa-xmark"></i>
+                <a href=""><span>FİLTERLƏRİ TƏMİZLƏ</span></a>
+            </div>
+            <div class="axtar">
+                <a href="">Axtar</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- etrafli axtaris end -->
+<section id="grid-ws">
+    <div class="count-searcher">
+        <span><b>@Model.Where(c=>c.IsEmpolyeer==false).Count() </b></span><p style="display: inline;">iş axtaran tapıldı</p>
+    </div>
+    <div class="boxs">
+        @foreach (AppUser user in Model.Where(c => c.IsEmpolyeer == false))
+        {
+            <div class="box">
+                <a style="text-decoration:none" asp-controller="DetailWorkSearcher" asp-action="index">
+                    <div class="content">
+                        <div class="img">
+                            <img src="~/assets/images/blank_avatar.png" alt="">
+                        </div>
+                        <h3>@user.FirstName @user.LastName</h3>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>
+

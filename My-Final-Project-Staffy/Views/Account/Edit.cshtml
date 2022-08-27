@@ -1,0 +1,197 @@
+﻿@model EditUserVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+  <div class="main-page">
+        <div class="main">
+          <div class="profil">
+              <div class="blue">
+                <div class="profil-detail">
+                  <div class="img">
+                    <input type="file" class="my_file">
+                  </div>
+                  <h1>Zeka Aliyev</h1>
+                </div>
+              </div>
+              <div class="tabs-menu">
+                  <ul class="tab-head-card">
+                    <li  class="tab-head ">
+                      <a data-id="1"  class="tab-head-link activ-reng" href="#">STAFFY Profili</a>
+                    </li>
+                    <li  class="tab-head">
+                      <a data-id="2" class="tab-head-link" href="#">Şəxsi məlumatlar</a>
+                    </li>
+                    <li  class="tab-head ">
+                      <a data-id="3" class="tab-head-link" href="#">Kayd edilənlər</a>
+                    </li>
+                    
+                  </ul>
+                  <div class="tab-body-card">
+                    <div data-id="1" class="tab-bodi active">
+                     <div data-id="1" class="tab-body active">
+                        <div class="contact-wrapper">
+                          <div class="sexsi"><h3>Şəxsi məlumatlar</h3></div>
+                          <form style="grid-template-columns: 1fr;" method="post">
+                            <div class="form-row">
+                              <input asp-for="FirstName" required>
+                              <span asp-validation-for="FirstName">Ad</span>
+                            </div>
+                            <div class="form-row">
+                              <input asp-for="LastName" required>
+                              <span asp-validation-for="LastName">Soyad</span>
+                            </div>
+                            <div class="form-row">
+                              <input asp-for="UserName" required>
+                              <span asp-validation-for="UserName">Username</span>
+                            </div>
+                           
+                            <div class="form-row">
+                              <input asp-for="Email" required readonly>
+                              <span asp-validation-for="Email">email</span>
+                            </div>
+                            
+                            <div class="form-row">
+                              <input asp-for="Password" required>
+                              <span asp-validation-for="Password">password</span>
+                            </div>
+                            <div class="form-row">
+                              <input asp-for="NewPassword">
+                              <span asp-validation-for="NewPassword">New password</span>
+                            </div>
+                            <div class="form-row">
+                              <input asp-for="ConfirmPassword">
+                              <span asp-validation-for="ConfirmPassword">Confirm password</span>
+                            </div>
+                            <button type="submit">Edit</button>
+                          </form>
+                        </div>
+                    </div>
+                    <div data-id="2" class="tab-body ">
+
+                      <div class="profilgucu">
+                        <div class="profil">
+                          <h2>Profil Gücü: Orta</h2>
+                          <i class="fa-solid fa-arrow-up  arroww"></i>
+                        </div>
+                        <div class="linebar">
+                          <div style="background: linear-gradient(to right, #1B3B88, #1D4F92);"></div>
+                          <div style="background: linear-gradient(to right, #1D4F92, #1E689D);"></div>
+                          <div style="background: linear-gradient(to right, #1E689D, #207CA7);"></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                        <div class="telefon">
+                          <div class="telefonnomresi">
+                            <div class="telefon-title">
+                              <img style="width: 70px; ;" src="images/phones.faccf625.svg" alt="">
+                              <div class="contentt">
+                                <h4>Telefon nömrəsi əlavə edin</h4>
+                                <p>Telefon nömrələri insanların sizi asanlıqla tapmasına kömək edir</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="telefonelaveet">
+                            <div class="arrow">
+                               <div class="evvelki">
+                                <i class="fa-solid fa-arrow-left"></i>
+                               <span>evvelki</span>
+                               </div>
+                               <div class="sonraki">
+                                <span>sonraki</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                               </div>
+                            </div>
+                            <div class="telefonbutton">
+                              <p>justify-content: space-between;</p>
+                            </div>
+                          </div>
+                        </div>
+                       </div>
+
+                        
+                      <div class="senedler">
+                          <div class="content">
+                            <h3>Sənədlər</h3>
+                            <i class="fa-solid fa-plus"></i>
+                          </div>
+                      </div>
+                      
+                    </div>
+                    <div data-id="3" class="tab-body ">   
+
+                      <div class="profilgucu">
+                        <div class="profil">
+                          <h2>Profil Gücü: Orta</h2>
+                          <i  class="fa-solid fa-arrow-up  arrowwd"></i>
+                        </div>
+                        <div class="linebar">
+                          <div style="background: linear-gradient(to right, #1B3B88, #1D4F92);"></div>
+                          <div style="background: linear-gradient(to right, #1D4F92, #1E689D);"></div>
+                          <div style="background: linear-gradient(to right, #1E689D, #207CA7);"></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                        <div class="telefon block">
+                          <div class="telefonnomresi">
+                            <div class="telefon-title">
+                              <img style="width: 70px; ;" src="images/phones.faccf625.svg" alt="">
+                              <div class="contentt">
+                                <h4>Telefon nömrəsi əlavə edin</h4>
+                                <p>Telefon nömrələri insanların sizi asanlıqla tapmasına kömək edir</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="telefonelaveet">
+                            <div class="arrow">
+                               <div class="evvelki">
+                                <i class="fa-solid fa-arrow-left"></i>
+                               <span>evvelki</span>
+                               </div>
+                               <div class="sonraki">
+                                <span>sonraki</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                               </div>
+                            </div>
+                            <div class="telefonbutton">
+                              <p>justify-content: space-between;</p>
+                            </div>
+                          </div>
+                        </div>
+                       </div>
+
+
+
+
+
+                      <div class="contact-wrapper">
+                        <form>
+                          <div class="form-row">
+                            <input type="password" required>
+                            <span>Cari şifrə</span>
+                          </div>
+                          <div class="form-row">
+                            <input type="password" required>
+                            <span>Yeni şifrə</span>
+                          </div>
+                        </form>
+                        <div class="deyisdir">
+                            <div></div>
+                            <button class="button">Deyisdir</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  

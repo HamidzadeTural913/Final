@@ -1,0 +1,56 @@
+﻿@model List<Company>
+@{
+    ViewData["Title"] = "Index";
+}
+
+     <main>
+    <section id="company-search">
+        <div class="company-input">
+          <input type="text" placeholder="Şirkət axtarışı">
+         </div>  
+        <div class="searchicon-company">
+             <div class="search-com">
+              <select name="" id="" class="form-control" >
+               <option value="">Bölgə</option>
+               <option value="">Baki</option>
+               <option value="">Zerdab</option>
+               <option value="">Naxcivan</option>
+               <option value="">Gence</option>
+             </select>
+             <div class="iconka"><i class="fa-solid fa-magnifying-glass"></i></div>
+             </div>
+        </div>
+    </section>
+    <section id="company">
+      <div class="contain-company">
+        @foreach (Company company in Model)
+       {
+        <div class="company-box ">
+          <div class="up-content">
+            <div class="right-content">
+              <div class="announce-img">
+                <img src="./assets/images/@company.Image" alt="" />
+              </div>
+              <div>
+                <h4><a href="company.html">@company.Name</a></h4>
+                <p>@company.Region</p>
+              </div>
+            </div>
+           
+          </div>
+          <div class="sales">
+             <div class="ayliq">
+              <div class="sale">
+                <span>Şirkət</span>
+              </div>
+              <div class="new-old">
+                <span>@company.VacationCount<i class="fa-solid fa-briefcase"></i></span>
+              </div>
+             </div>
+          </div>
+        </div>
+       }
+      </div>
+    </section>
+     </main>
+

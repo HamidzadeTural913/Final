@@ -1,0 +1,51 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+ <main>
+      <section id="company-search">
+        <div class="company-input">
+          <input type="text" placeholder="Şirkət axtarışı">
+         </div>  
+        <div class="searchicon-company">
+             <div class="search-com">
+             <div class="iconka"><i class="fa-solid fa-magnifying-glass"></i></div>
+             </div>
+        </div>
+      </section>
+        <section id="blogg"> 
+            <div class="blog-boxs">
+                @foreach (Blog blog in Model)
+                {
+                    <div class="blog-box">
+                    <div class="blog-img">
+                        <img src="~/assets/images/@blog.Image" alt="">
+                    </div>
+                    <div class="content">
+                        <h1>@blog.Title</h1>
+                        <p>@blog.Subtitle</p>
+                        <h5>@blog.Date</h5>
+                    </div>
+                </div>
+                }
+            </div>
+         </section>
+    </main>
+
+    <div class="myPagination">
+        <style>
+            .mymyPagination{
+                display:flex;
+                justify-content:center;
+            }
+        </style>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}),new X.PagedList.Web.Common.PagedListRenderOptionsBase
+    {
+    LiElementClasses=new[] {"page-item"},
+    PageClasses = new[] {"page-link"}
+    })
+    </div>
+

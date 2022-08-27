@@ -1,0 +1,204 @@
+﻿@model List<Company>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <div class="main-page">
+        <div class="main mb-5">
+          <div class="profil">
+              <div class="blue">
+                <div class="profil-detail">
+                  <div class="img">
+                    <input type="file" class="my_file">
+                  </div>
+                  <h1>Zeka Aliyev</h1>
+                </div>
+              </div>
+              <div class="tabs-menu">
+                  <ul>
+                    <li><a href="#">STAFFY PROFILI</a></li>
+                    <li><a href="#">SƏNƏDLƏR</a></li>
+                    <li><a href="#">ŞİFƏNİ DƏYİŞ</a></li>
+                    <li><a href="#">STAFFY CV Nİ GOR</a></li>
+                    
+                  </ul>
+              </div>
+          </div>
+          <div class="advertisement">
+            <div class="title d-flex justify-content-between">
+              <h4>Is Elanlari</h4>
+              <button class="new-vacancy-btn"><i class="fa-solid fa-plus"></i>Yeni Vakansiya</button>
+            </div>
+            <div class="search">
+              <input type="text" placeholder="Vakansiya adi">
+              <div class="advanced-search">
+                <a href="#new-vacancy">Etrafli axtaris<i class="fa-solid fa-angle-down"></i></a>
+              </div>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div id="new-vacancy">
+            <div class="title mb-3">
+              <h3>YENI VAKANSIYA</h3>
+            </div>
+            <form action="">
+              <div class="form-title">
+                <h4>Vakansiyanin detallari</h4>
+              </div>
+              <div class="head">
+                <input type="text" placeholder="Basliq">   
+              </div>
+              <div class="row">
+                <div class="state-type col-lg-3">
+                  <select name="" id="">
+                    <option value="">Ştat növü</option>
+                    <option value="">Tam ştat</option>
+                    <option value="">Yarım Ştat</option>
+                    <option value="">Uzaqdan</option>
+                    <option value="">Könüllü</option>
+                    <option value="">Muzdlu</option>
+                    <option value="">Təcrübəçi</option>
+                  </select>
+                </div>
+                <div class="work-table col-lg-3">
+                  <select name="" id="">
+                    <option value="">İş Cədvəli</option>
+                    <option value="">Bütün gün</option>
+                    <option value="">Növbəli</option>
+                    <option value="">Rahat</option>
+                    <option value="">Uzaqdan</option>
+                    <option value="">Müvəqqəti səyahətlə</option>
+                  </select>
+                </div>
+                <div class="recruitment-process col-lg-2">
+                  <select name="" id="">
+                    <option value="">Standart qebul prosesi</option>
+                  </select>
+                </div>
+                <div class="category col-lg-4">
+                  <select name="" id="">
+                    <option value="">İnzibati</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                    <option value="">Maliyye</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text">
+                <div class="title">
+                  <ul>
+                    <li><a class="normal" href="">Normal<i class="fa-solid fa-sort"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-italic"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-underline"></i></a></li>
+                    <li><a href=""><i class="fa-regular fa-copy"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-list-ol"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-list-ul"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-text-slash"></i></a></li>
+                  </ul>
+                </div>
+                <div class="message">
+                  <input type="text">
+                </div>
+              </div>
+            </form>
+            <form class="salary mt-3" action="">
+              <div class="title">
+                <h4>Tələblər & Əmək Haqqı</h4>
+              </div>
+              <div class="row mt-3">
+                <div class="practice col-lg-2">
+                  <select name="" id="">
+                    <option value="">Tecrube</option>
+                    <option value="">1 ilden az</option>
+                    <option value="">1 ilden cox</option>
+                    <option value="">Tecrube</option>
+                    <option value="">Tecrube</option>
+                  </select>
+                </div>
+                <div class="gender col-lg-2">
+                  <select name="" id="">
+                    <option value="">Cinsiyyet</option>
+                    <option value="">Kisi</option>
+                    <option value="">Qadin</option>
+                  </select>
+                </div>
+                <div class="education col-lg-4">
+                  <select name="" id="">
+                    <option selected value="">Tehsil</option>
+                    <option value="">Ali</option>
+                    <option value="">Orta</option>
+                    <option value="">Natamam Ali</option>
+                  </select>
+                </div>
+                <div class="skills col-lg-4">
+                  <input type="text" placeholder="Bacariqlar">
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="min-salary col-lg-3">
+                  <input type="number" placeholder="minimum emek haqqi">
+                </div>
+                <div class="maks-salary col-lg-3">
+                  <input type="number" placeholder="maksimum emek haqqi">
+                </div>
+                <div class="min-age col-lg-3">
+                  <input type="number" placeholder="Minimum Yas">
+                </div>
+                <div class="maks-age col-lg-3">
+                  <input type="number" placeholder="Maksimum Yas">
+                </div>
+              </div>
+            </form>
+            <div class="row mt-3">
+              <div class="workplace col-lg-6">
+                <div class="title">
+                  <h4>Is yeri</h4>
+                </div>
+                <div class="region mt-3">
+                  <select name="" id="">
+                    <option value="">Azerbaycan</option>
+                  </select>
+                </div>
+                <div class="address mt-3">
+                  <input type="text" placeholder="Unvan">
+                </div>
+              </div>
+              <div class="contact-information col-lg-6">
+                <div class="title">
+                  <h4>Elaqe melumat</h4>
+                </div>
+                <div class="relevant-person">
+                  <input type="text" placeholder="Elaqedar sexs">
+                </div>
+                <div class="email-address mt-3">
+                  <input type="text" placeholder="elektron unvan">
+                </div>
+                <div class="new-email-address text-center mt-3">
+                  <a href=""><i class="fa-solid fa-plus"></i>Yeni Elektron Unvan</a>
+                </div>
+                <div class="num-address mt-3">
+                  <div class="phone">
+                  <input type="number" placeholder="+994">
+                </div>
+                <div class="info">
+                  <input type="text" placeholder="melumat">
+                </div>
+                </div>
+                <div class="new-email-address text-center mt-3">
+                  <a href=""><i class="fa-solid fa-plus"></i>Yeni telefon Nomresi</a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</main>

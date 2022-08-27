@@ -1,0 +1,59 @@
+﻿@model EmployeeRegisterVM
+
+<section id="register">
+<div class="register">
+      <div class="title">
+        <div class="daxil-ol">
+          <h3><a asp-action="Login">Daxil ol</a></h3>
+        </div>
+        <div class="qeydiyyat">
+          <h3><a class="register-btn" href="#register">Qeydiyyatdan keç</a></h3>
+        </div>
+        <div class="closed">
+          <a class="close-btn" href=""><i class="fa-solid fa-xmark"></i></a>
+        </div>
+       </div>
+       <div class="job">
+        <div class="job-seeker">
+          <a href=""><i class="fa-regular fa-user"></i>
+            <span>İş axtaran</span>
+          </a>
+        </div>
+        <div class="recruiter">
+          <a class="recruiter-btn" asp-action="EmployeerRegister"><i class="fa-regular fa-building"></i>
+            <span>İşə götürən</span>
+          </a>
+        </div>
+       </div>
+       <form method="post">
+        <div class="name">
+          <i class="fa-solid fa-image-portrait"></i>
+          <input asp-for="FirstName" placeholder="Adınız">
+        </div>
+        <span style="color: red;" asp-validation-for="FirstName"></span>
+        <div class="surname">
+          <i class="fa-solid fa-image-portrait"></i>
+          <input asp-for="LastName" placeholder="Soyadınız">
+        </div>
+         <span style="color: red;" asp-validation-for="LastName"></span>
+        <div class="Email">
+          <i class="fa-regular fa-envelope"></i>
+          <input asp-for="Email" placeholder="Email">
+        </div>
+        <span style="color: red;" asp-validation-for="Email"></span>
+        <div class="Email">
+          <i class="fa-solid fa-user-ninja"></i>
+          <input asp-for="UserName" placeholder="İstifadəçi adı">
+        </div>
+        <span style="color: red;" asp-validation-for="UserName"></span>
+        <div class="password">
+          <i class="fa-solid fa-lock"></i>
+          <input asp-for="Password" placeholder="Şifrə">
+        </div>
+        <span style="color: red;" asp-validation-for="Password"></span>
+         <button class="registration" type="submit">Qeydiyyat</button>
+       </form>
+</div>
+  
+</section>
+

@@ -1,0 +1,82 @@
+﻿@using System.Drawing
+@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive pt-3">
+    <a asp-controller="Blog" asp-action="Create" class="btn btn-success"  style="color:white;">Create Blog</a>
+                    <table class="table table-dark">
+                      <thead>
+                        <tr>
+                          <th>
+                            Id
+                          </th>
+                          <th>
+                            Image
+                          </th>
+                          <th>
+                            Title
+                          </th>
+                          <th>
+                            Subtitle
+                          </th>
+                          <th>
+                            Date
+                          </th>
+                          <th>
+                            Settings
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach (Blog blog in Model)
+                         {
+                          <tr>
+                          <td>
+                            @blog.Id
+                          </td>
+                          <td>
+                            <img style="width:150px; height:110px" src="~/assets/images/@blog.Image" alt="">
+                          </td>
+                          <td>
+                            @if(blog.Title.Length>=15)
+                        {
+                            @(blog.Title.Substring(0,15).ToString() + "....")
+                        }
+                        else
+                        {
+                            @blog.Title
+                        }
+                          </td>
+                          <td>
+                            @if(blog.Subtitle.Length>=20)
+                        {
+                            @(blog.Subtitle.Substring(0,20).ToString() + "....")
+                        }
+                        else
+                        {
+                            @blog.Subtitle
+                        }
+                    </td>
+                          <td>
+                            @blog.Date
+                          </td>
+                          <td>
+                            <div class="d-flex" style="gap:10px;">
+                                <div class="detail">
+                                    <a asp-controller="Blog" asp-action="Detail" asp-route-id="@blog.Id" class="btn btn-primary"><i class="mdi mdi-information-outline"></i></a>
+                                </div>
+                                <div class="update">
+                                    <a asp-controller="Blog" asp-action="Edit" asp-route-id="@blog.Id" class="btn btn-warning"><i class="mdi mdi-table-edit"></i></a>
+                                </div>
+                                <div class="delete">
+                                    <a asp-controller="Blog" asp-action="Delete" asp-route-id="@blog.Id" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                                </div>
+                            </div>
+                          </td>
+                          </tr>
+                         }
+                      </tbody>
+                    </table>
+                  </div>
