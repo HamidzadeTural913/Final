@@ -1,7 +1,251 @@
 ﻿@model RegisterVM
 @{
     ViewData["Title"] = "EmployeerRegister";
+    Layout = null;
 }
+
+@inject My_Final_Project_Staffy.Services.LayoutService forService
+@{
+    AppUser user = await forService.GetAppUser(User.Identity.Name);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staffy-by Hamidzade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link rel="stylesheet" href="~/assets/scss/css/style.css" />
+</head>
+    <header>
+        <div class="menu-overlay"></div>
+        <div class="content">
+            <div class="logo_menu">
+                <a href="#">
+                    <img src="~/assets/images/@forService.GetDatas().Result.FirstOrDefault(l=>l.Key == "HeaderLogo").Value" alt="" />
+                </a>
+                <nav>
+                    <ul class="menu">
+                        <div class="items">
+                            <div class="login"><span><a asp-controller="Account" asp-action="Register">Giris Et</a></span></div>
+                        <li><a asp-controller="WorkAnnounce" asp-action="index">İş elanları</a></li>
+                        <li><a asp-controller="WorkSearcher" asp-action="index">İş axtaranlar</a></li>
+                        <li><a asp-controller="Company" asp-action="Index">Şirkətlər</a></li>
+                        <li><a asp-controller="Blog" asp-action="Index">Bloq</a></li>
+                        <li><a asp-controller="AboutWA" asp-action="Index">Haqqımızda</a></li>
+                        <div class="light-dark ">
+                            <i id="dark_mod" class="fa-solid fa-moon"></i>
+                        </div>
+
+            </div>
+            </ul>
+            </nav>
+        </div>
+        <div class="register">
+            <div class="register_content">
+                <div class="lang">
+
+                    <div class="img-lang">
+                        <svg id="Layer_1"
+                             x="0px"
+                             y="0px"
+                             viewBox="0 0 512 512"
+                             xml:space="preserve"
+                             width="28"
+                             height="28"
+                             style="margin-right: 6px">
+                        <path d="M512,256c0-31.314-5.632-61.311-15.923-89.043L256,155.826l-240.077,11.13 C5.633,194.689,0,224.686,0,256s5.633,61.311,15.923,89.043L256,356.174l240.077-11.13C506.368,317.311,512,287.314,512,256z"
+                              style="fill: rgb(216, 0, 39)"></path>
+                        <path d="M256,512c110.071,0,203.906-69.472,240.077-166.957H15.923C52.094,442.528,145.929,512,256,512z"
+                              style="fill: rgb(109, 165, 68)"></path>
+                        <path d="M15.923,166.957h480.155C459.906,69.472,366.071,0,256,0S52.094,69.472,15.923,166.957z"
+                              style="fill: rgb(51, 138, 243)"></path>
+                        <g>
+                        <path d="M261.565,328.348c-39.956,0-72.348-32.392-72.348-72.348s32.392-72.348,72.348-72.348 c12.458,0,24.181,3.15,34.415,8.696c-16.056-15.701-38.012-25.392-62.241-25.392c-49.178,0-89.043,39.866-89.043,89.043 s39.866,89.043,89.043,89.043c24.23,0,46.186-9.691,62.241-25.392C285.746,325.198,274.023,328.348,261.565,328.348z"
+                              style="fill: rgb(240, 240, 240)"></path>
+                        <polygon points="317.217,205.913 326.8,232.864 352.634,220.582 340.353,246.416 367.304,256  340.353,265.584 352.634,291.418 326.8,279.136 317.217,306.087 307.635,279.136 281.8,291.418 294.082,265.584 267.13,256  294.082,246.416 281.8,220.582 307.635,232.864  "
+                                 style="fill: rgb(240, 240, 240)"></polygon>
+                </g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+              </svg>
+                    </div>
+                    <span>AZ</span>
+                </div>
+                <div class="light-dark">
+                    <i id="dark_mod" class="fa-solid fa-moon"></i>
+                </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <header>
+                        <div class="menu-overlay"></div>
+                        <div class="content">
+                            <div class="logo_menu">
+                                <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/@forService.GetDatas().Result.FirstOrDefault(l=>l.Key == "HeaderLogo").Value" alt="" /></a>
+                                <nav>
+                                    <ul class="menu">
+                                        <div class="items">
+                                            <div class="login"><span>Giriş et</span></div>
+                                        <li><a asp-controller="WorkAnnounce" asp-action="index">İş elanları</a></li>
+                                        <li><a asp-controller="WorkSearcher" asp-action="index">İş axtaranlar</a></li>
+                                        <li><a asp-controller="Company" asp-action="Index">Şirkətlər</a></li>
+                                        <li><a asp-controller="Blog" asp-action="Index">Bloq</a></li>
+                                        <li><a asp-controller="AboutWA" asp-action="Index">Haqqımızda</a></li>
+                                        <div class="light-dark">
+                                            <i id="dark_mod" class="fa-solid fa-moon"></i>
+                                        </div>
+                            </div>
+                            </ul>
+                            </nav>
+                        </div>
+                        <div class="register">
+                            <div class="register_content">
+                                <a asp> <i class="fa-regular fa-bookmark"></i></a>
+                                <div class="lang">
+                                    <div class="img-lang">
+                                        <svg id="Layer_1"
+                                         x="0px"
+                                         y="0px"
+                                         viewBox="0 0 512 512"
+                                         xml:space="preserve"
+                                         width="28"
+                                         height="28"
+                                         style="margin-right: 6px">
+                                        <path d="M512,256c0-31.314-5.632-61.311-15.923-89.043L256,155.826l-240.077,11.13 C5.633,194.689,0,224.686,0,256s5.633,61.311,15.923,89.043L256,356.174l240.077-11.13C506.368,317.311,512,287.314,512,256z"
+                                          style="fill: rgb(216, 0, 39)"></path>
+                                        <path d="M256,512c110.071,0,203.906-69.472,240.077-166.957H15.923C52.094,442.528,145.929,512,256,512z"
+                                          style="fill: rgb(109, 165, 68)"></path>
+                                        <path d="M15.923,166.957h480.155C459.906,69.472,366.071,0,256,0S52.094,69.472,15.923,166.957z"
+                                          style="fill: rgb(51, 138, 243)"></path>
+                                        <g>
+                                        <path d="M261.565,328.348c-39.956,0-72.348-32.392-72.348-72.348s32.392-72.348,72.348-72.348 c12.458,0,24.181,3.15,34.415,8.696c-16.056-15.701-38.012-25.392-62.241-25.392c-49.178,0-89.043,39.866-89.043,89.043 s39.866,89.043,89.043,89.043c24.23,0,46.186-9.691,62.241-25.392C285.746,325.198,274.023,328.348,261.565,328.348z"
+                                          style="fill: rgb(240, 240, 240)"></path>
+                                        <polygon points="317.217,205.913 326.8,232.864 352.634,220.582 340.353,246.416 367.304,256  340.353,265.584 352.634,291.418 326.8,279.136 317.217,306.087 307.635,279.136 281.8,291.418 294.082,265.584 267.13,256  294.082,246.416 281.8,220.582 307.635,232.864  "
+                                             style="fill: rgb(240, 240, 240)"></polygon>
+                                                            </g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                                          </svg>
+                                    </div>
+                                    <span>AZ</span>
+                                </div>
+                                <div class="account">
+                                    <a><span>@User.Identity.Name</span></a> <br />
+
+                                    <span class="account-img">
+                                        <img src="./assets/images/blank_avatar.png" alt="">
+                                    </span>
+                                </div>
+                                <div style="display: none;" class="light-dark">
+                                    <i id="dark_mod" class="fa-solid fa-moon"></i>
+                                </div>
+                                <div style="display: none;" class="login"><span>Giriş et</span></div>
+                                <div class="account">
+                                </div>
+                                <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+                            </div>
+                        </div>
+                </div>
+        </header>
+        <!-- header end -->
+        <div class="accaunt-setting">
+            <div class="user">
+                <div class="user-img">
+                    <img src="~/assets/images/blank_avatar.png" alt="">
+                </div>
+                <div class="user-name">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                        <h2>@User.Identity.Name</h2>
+                                        @if (user.IsEmpolyeer == true)
+                                        {
+                            <p><a asp-controller="Account" asp-action="EditEmployer">Employeer</a></p>
+                                        }
+                                        else
+                                        {
+                            <p><a asp-controller="Account" asp-action="Edit">Employee</a></p>
+                                        }
+                                    }
+
+
+
+                </div>
+            </div>
+            <div class="settings">
+                <ul>
+                                    @if (user.IsEmpolyeer == true)
+                                    {
+                        <li><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg><a href="#"><div class="setting-menu"><span><a asp-controller="ConstructCompany" asp-action="Create">Vakansiya yarat</a></span></div></a></li>
+                                    }
+                    <li>
+                        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg>
+                        <a href="#"><div class="setting-menu"><span>Müraciətlər</span></div></a>
+                    </li>
+                    <li>
+                        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 18l2 1V3c0-1.1-.9-2-2-2H8.99C7.89 1 7 1.9 7 3h10c1.1 0 2 .9 2 2v13zM15 5H5c-1.1 0-2 .9-2 2v16l7-3 7 3V7c0-1.1-.9-2-2-2z"></path></svg><a href="#"><div class="setting-menu"><span>Yadda saxlanılanlar</span></div></a>
+                    </li>
+                    <li><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path transform="scale(1.2, 1.2)" d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"></path></svg><a href="#"><div class="setting-menu"><span>Ayarlar</span></div></a></li>
+                    <hr>
+                    <li>
+                        <a href="#">
+                            <div class="light-dark">
+                                <i id="dark_mod" class="fa-solid fa-moon"></i> <span>Tünd tema</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"></path></svg><a asp-controller="Account" asp-action="Logout"><div class="setting-menu"><span>Çıxış</span></div></a></li>
+                </ul>
+            </div>
+        </div>
+                    }
+                    else
+                    {
+        <div class="login"><span><a asp-controller="Account" asp-action="Register">Giriş et</a></span></div>
+                    }
+    <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+    </div>
+    </div>
+    </div>
+    </header>
 
 <section id="recruiter">
     <div class="register">

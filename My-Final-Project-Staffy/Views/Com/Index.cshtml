@@ -1,10 +1,9 @@
-﻿@model List<Company>
+﻿@model List<Com>
 @{
     ViewData["Title"] = "Index";
 }
 
-     <main>
-    <section id="company-search">
+  <section id="company-search">
         <div class="company-input">
           <input type="text" placeholder="Şirkət axtarışı">
          </div>  
@@ -12,10 +11,10 @@
              <div class="search-com">
               <select name="" id="" class="form-control" >
                <option value="">Bölgə</option>
-               <option value="">Baki</option>
-               <option value="">Zerdab</option>
-               <option value="">Naxcivan</option>
-               <option value="">Gence</option>
+               <option value="">Azerbaijan</option>
+               <option value="">Turkey</option>
+               <option value="">Belgium</option>
+               <option value="">Greece</option>
              </select>
              <div class="iconka"><i class="fa-solid fa-magnifying-glass"></i></div>
              </div>
@@ -23,17 +22,17 @@
     </section>
     <section id="company">
       <div class="contain-company">
-        @foreach (Company company in Model)
-       {
-        <div class="company-box ">
+       @foreach (Com com in Model)
+      {
+           <div class="company-box ">
           <div class="up-content">
             <div class="right-content">
               <div class="announce-img">
-                <img src="./assets/images/@company.Image" alt="" />
+                <img src="./assets/images/Company.png " alt="" />
               </div>
               <div>
-                <h4><a href="company.html">@company.Name</a></h4>
-                <p>@company.Region</p>
+                <h4><a href="company.html">@com.Name</a></h4>
+                <p>@com.Bolge</p>
               </div>
             </div>
            
@@ -41,16 +40,15 @@
           <div class="sales">
              <div class="ayliq">
               <div class="sale">
-                <span>Şirkət</span>
+                <span>@com.ComName</span>
               </div>
               <div class="new-old">
-                <span>@company.VacationCount<i class="fa-solid fa-briefcase"></i></span>
+                <span><i class="fa-solid fa-briefcase"></i></span>
               </div>
              </div>
           </div>
         </div>
-       }
+      }
       </div>
     </section>
-     </main>
 

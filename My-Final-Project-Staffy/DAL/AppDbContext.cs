@@ -16,7 +16,6 @@ namespace My_Final_Project_Staffy.DAL
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Company> Companies { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Gender> Genders { get; set; }
         public DbSet<State> States { get; set; }
@@ -28,5 +27,6 @@ namespace My_Final_Project_Staffy.DAL
         public DbSet<forService> forServices { get; set; }
         public DbSet<WishListItem> WishListItems { get; set; }
         public DbSet<Education> Educations { get; set; }
+        public DbSet<Com> Coms { get; set; }
     }
 }

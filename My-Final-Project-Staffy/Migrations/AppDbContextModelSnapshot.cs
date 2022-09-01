@@ -343,28 +343,25 @@ namespace My_Final_Project_Staffy.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("My_Final_Project_Staffy.Models.Company", b =>
+            modelBuilder.Entity("My_Final_Project_Staffy.Models.Com", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Image")
+                    b.Property<string>("Bolge")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ComName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Region")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("VacationCount")
-                        .HasColumnType("tinyint");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Coms");
                 });
 
             modelBuilder.Entity("My_Final_Project_Staffy.Models.Education", b =>
@@ -468,10 +465,10 @@ namespace My_Final_Project_Staffy.Migrations
                     b.Property<string>("Adress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("CompanyId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -526,14 +523,17 @@ namespace My_Final_Project_Staffy.Migrations
                     b.Property<int>("StateId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("WorkTableId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("EducationId");
 
@@ -667,13 +667,13 @@ namespace My_Final_Project_Staffy.Migrations
 
             modelBuilder.Entity("My_Final_Project_Staffy.Models.Vacation", b =>
                 {
+                    b.HasOne("My_Final_Project_Staffy.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("My_Final_Project_Staffy.Models.Category", null)
                         .WithMany("Vacations")
                         .HasForeignKey("CategoryId");
-
-                    b.HasOne("My_Final_Project_Staffy.Models.Company", null)
-                        .WithMany("Vacations")
-                        .HasForeignKey("CompanyId");
 
                     b.HasOne("My_Final_Project_Staffy.Models.Education", "Education")
                         .WithMany()

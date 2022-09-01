@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomeVM
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -68,15 +69,17 @@
             <h2>Seçilmiş vakansiyalar</h2>
         </div>
         <div class="contain-company">
-            <div class="company-box ">
+           @foreach (var item in Model.Vacations.Where(c=>c.IsChoosed==true))
+          {
+               <div class="company-box ">
                 <div class="up-content">
                     <div class="right-content">
                         <div class="announce-imgg">
                             <img src="./assets/images/Company.png " alt="" />
                         </div>
                         <div>
-                            <h4><a href="category-detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
+                            <h4><a href="category-detail.html">@item.Title</a></h4>
+                            <p>Sirket</p>
                         </div>
                     </div>
                     <div class="left-content">
@@ -86,9 +89,9 @@
                 </div>
                 <div class="main">
                     <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
+                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>@item.MinSalary-@item.MaxSalary AZN</a></li>
                         <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
+                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>@item.State.Name</a></li>
                         <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
                     </ul>
                 </div>
@@ -96,147 +99,11 @@
                     <span><a href="">Dünən</a></span>
                 </div>
             </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
+          }
 
         </div>
         <div class="choosed-vacation-show">
-            <button><a href="">Bütün vakansiyaları göstər</a></button>
+            <button><a asp-controller="WorkAnnounce" asp-action="Index">Bütün vakansiyaları göstər</a></button>
         </div>
     </section>
     <section id="grid-ws">
@@ -339,503 +206,41 @@
             <h2>Yeni vakansiyalar</h2>
         </div>
         <div class="contain-company">
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
+            @foreach (Vacation vacation in Model.Vacations)
+            {
+                <div class="company-box ">
+                    <div class="up-content">
+                        <div class="right-content">
+                            <div class="announce-imgg">
+                                <img src="./assets/images/Company.png " alt="" />
+                            </div>
+                            <div>
+                                <h4><a href="category-detail.html">@vacation.Title</a></h4>
+                                <p>
+                                    Şirkət
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h4><a href="category-detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
+                        <div class="left-content">
+                            <i class="fa-regular fa-bookmark"></i>
                         </div>
                     </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
+                    <div class="main">
+                        <ul>
+                            <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>@vacation.MinSalary-@vacation.MaxSalary AZN</a></li>
+                            <li class="main-2"><a href="">Yeni</a></li>
+                            <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>@vacation.State.Name</a></li>
+                            <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
+                        </ul>
+                    </div>
+                    <div class="end">
                     </div>
                 </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="category-detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="category-detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end mt-3">
-                    <span><a href="">Dünən</a></span>
-                </div>
-            </div>
-            <div class="company-box ">
-                <div class="up-content">
-                    <div class="right-content">
-                        <div class="announce-imgg">
-                            <img src="./assets/images/Company.png " alt="" />
-                        </div>
-                        <div>
-                            <h4><a href="detail.html">Stok planlama üzrə mütəxəssis</a></h4>
-                            <p>Army</p>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </div>
-                </div>
-                <div class="main mt-3">
-                    <ul>
-                        <li class="main-1"><a href=""><i class="fa-solid fa-wallet"></i>1500-2000 AZN</a></li>
-                        <li class="main-2"><a href="">Yeni</a></li>
-                        <li class="main-3"><a href=""><i class="fa-solid fa-briefcase"></i>Tam Stat</a></li>
-                        <li class="main-4"><a href=""><i class="fa-solid fa-angles-right"></i>Asan Muraciet</a></li>
-                    </ul>
-                </div>
-                <div class="end">
-                    <span><a href="">Dünən</a></span>
-
-                </div>
-            </div>
+            }
 
         </div>
         <div class="choosed-vacation-show">
-            <button><a href="">Bütün vakansiyaları göstər</a></button>
+            <button><a asp-controller="WorkAnnounce" asp-action="Index">Bütün vakansiyaları göstər</a></button>
         </div>
     </section>
 </main>

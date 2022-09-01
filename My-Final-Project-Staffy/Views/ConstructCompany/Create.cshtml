@@ -50,20 +50,20 @@
                             <div class="box row p-3 mt-4">
                                 <h5>Vakansiyanın detalları</h5>
                                 <div class="col-lg-12">
-                                    <input class="form-control" type="text" name="" id="" placeholder="Basliq">
+                                    <input class="form-control" asp-for="Title" placeholder="Şirkət adı">
                                 </div>
                                 <div class="col-lg-6">
                                     <select class="form-select" asp-for="StateId" asp-items="@(new SelectList(ViewBag.State,"Id","Name"))" >
-                                        <option selected value="" >Stat nove</option>
+                                        <option selected value="" >Ştat növü</option>
                                     </select>
                                 </div>
                                       <div class="col-lg-6">
                                     <select class="form-select" asp-for="WorkTableId" asp-items="@(new SelectList(ViewBag.Work,"Id","Name"))" >
-                                        <option selected value="" >Work</option>
+                                        <option selected value="" >İş cədvəli</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea asp-for="Description" class="form-control" placeholder="Movzu" cols="30"
+                                    <textarea asp-for="Description" class="form-control" placeholder="Mövzu" cols="30"
                                               rows="10"></textarea>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="box row p-3 mt-4">
-                                <h5>Telebler & Emek haqqi</h5>
+                                <h5>Tələblər & Əmək haqqı</h5>
                                 <div class="col-lg-3">
                                     <select class="form-select"  asp-for="ExperienceId" asp-items="@(new SelectList(ViewBag.Experience,"Id","Name"))" >
                                         <option selected value="">Tecrube</option>
@@ -88,47 +88,47 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-3">
-                                    <input asp-for="Ability" placeholder="Bacariqlar">
+                                    <input asp-for="Ability" placeholder="Bacarıqlar">
                                 </div>
                                 <div class="col-lg-3">
                                     <input class="form-control" asp-for="MinSalary"
-                                           placeholder="minimum emek haqqi">
+                                           placeholder="Minimum emek haqqi">
                                 </div>
                                 <div class="col-lg-3">
                                     <input class="form-control" asp-for="MaxSalary"
-                                           placeholder="maximum emek haqqi">
+                                           placeholder="Maksimum emek haqqi">
                                 </div>
                                 <div class="col-lg-3">
-                                    <input class="form-control" asp-for="MinAge" placeholder="minimum yas">
+                                    <input class="form-control" asp-for="MinAge" placeholder="Minimum yaş">
                                 </div>
                                 <div class="col-lg-3">
-                                    <input class="form-control"asp-for="MaxAge" placeholder="maximum yas ">
+                                    <input class="form-control"asp-for="MaxAge" placeholder="Maksimum yaş">
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-lg-6">
                             <div class="box mt-4 p-4">
-                                <h5>Is yeri</h5>
+                                <h5>İş yeri</h5>
                                 <div class="col-lg-12">
-                                   <input asp-for="Adress" placeholder="Unvan">
+                                   <input asp-for="Adress" placeholder="Ünvan">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="box mt-4 p-4">
-                                <h5>Elaqe melumat</h5>
+                                <h5>Əlaqə və məlumat</h5>
                                 <div class="col-lg-12">
-                                    <input class="form-control" asp-for="Name" placeholder="Elaqedar sexs">
+                                    <input class="form-control" asp-for="Name" placeholder="Əlaqədar şəxs">
                                 </div>
                                 <div class="col-lg-12">
-                                    <input class="form-control" asp-for="Email" placeholder="Elektron unvan">
+                                    <input class="form-control" asp-for="Email" placeholder="Elektron ünvan">
                                 </div>
                                 <div class="col-lg-12">
-                                    <input class="form-control" asp-for="Phone" placeholder="Elaqe nomresi">
+                                    <input class="form-control" asp-for="Phone" placeholder="Əlaqə nömrəsi">
                                 </div>
                                 <div class="col-lg-12">
-                                    <input class="form-control" asp-for="Information" placeholder="Melumat">
+                                    <input class="form-control" asp-for="Information" placeholder="Məlumat">
                                 </div>
                             </div>
                         </div>

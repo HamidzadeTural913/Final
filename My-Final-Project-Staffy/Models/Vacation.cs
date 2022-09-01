@@ -11,6 +11,8 @@ namespace My_Final_Project_Staffy.Models
         public string Region { get; set; }
         public string Adress { get; set; }
         public string Ability { get; set; }
+
+        public string Title { get; set; }
         public string Name { get; set; }
         public int MinSalary { get; set; }
         public int MaxSalary { get; set; }
@@ -31,5 +33,10 @@ namespace My_Final_Project_Staffy.Models
         public Gender Gender { get; set; }
         public Education Education { get; set; }
         public int? EducationId { get; set; }
+
+        public AppUser AppUser { get; set; }
+        public string AppUserId { get; set; }
+
+
     }
 }

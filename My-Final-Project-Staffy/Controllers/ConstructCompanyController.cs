@@ -26,7 +26,7 @@ namespace My_Final_Project_Staffy.Controllers
 
             Vacation vacation = await _context.Vacations.Include(c => c.State).Include(x => x.Experience).Include(x => x.Gender).Include(c => c.Education).Include(x=>x.WorkTable).FirstOrDefaultAsync();
 
-            return View(vacation);
+            return View();
         }
 
         [HttpPost]
